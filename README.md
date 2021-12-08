@@ -6,6 +6,7 @@ Utility script that allows you to convert videos into preprocessed frames. The m
 
 - [Waldo Video Preprocessor](#waldo-video-preprocessor)
   - [Table of contents](#table-of-contents)
+  - [Preview](#preview)
   - [How to use](#how-to-use)
     - [With Docker (recommended)](#with-docker-recommended)
     - [Without Docker](#without-docker)
@@ -15,6 +16,22 @@ Utility script that allows you to convert videos into preprocessed frames. The m
     - [Error messages](#error-messages)
     - [Bugs](#bugs)
   - [Testing](#testing)
+
+## Preview
+
+![Converted Frame 1](images/frame_11.png)
+
+```
+python3 run.py -s "./data" -f 1
+```
+
+![Converted Frame 2](images/frame_11_converted.png)
+
+```
+python3 run.py -s "./data" -f 1 --width 128 --height 128 -g
+```
+
+_Credits to Homeless. (https://drive.google.com/drive/folders/1-nK8-WthZyB9G1O9MmAgD3h6CQsYkhUr)_
 
 ## How to use
 
@@ -111,7 +128,7 @@ For the moment just ignore it.
 
 ### Bugs
 
-Feel free to open a issue if you encounter any problems. (https://github.com/leonardcser/waldo-preprocess/issues/new/choose)
+Feel free to open a issue if you encounter any problems. [[Open Issue]](https://github.com/leonardcser/waldo-preprocess/issues/new/choose)
 
 ## Testing
 
