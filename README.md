@@ -39,7 +39,7 @@ _Credits to Homeless. (https://drive.google.com/drive/folders/1-nK8-WthZyB9G1O9M
 
 1. Make sure you have these dependencies installed on your computer:
 
-- Python3 (3.6-3.9): https://www.python.org/downloads/
+- Python3 (3.8-3.9): https://www.python.org/downloads/
 - Docker: https://docs.docker.com/engine/install/
 
 2. Build the container video with the following command (takes a minute & approx. 1.1GB):
@@ -100,6 +100,10 @@ The options include:
 | -f --fps      | The output target fps                                                               | No       | `10`      | `int`  |
 | --width       | The output frame width. If not provied, the width will not be resized               | No       | `None`    | `int`  |
 | --height      | The output frame height. If not provied, the height will not be resized             | No       | `None`    | `int`  |
+| --cxmin       | The output frame crop min x. If not provided, the frames will not be cropped        | No       | `None`    | `int`  |
+| --cxmax       | The output frame crop max x. If not provided, the frames will not be cropped        | No       | `None`    | `int`  |
+| --cymin       | The output frame crop min y. If not provided, the frames will not be cropped        | No       | `None`    | `int`  |
+| --cymax       | The output frame crop max y. If not provided, the frames will not be cropped        | No       | `None`    | `int`  |
 | -g --gray     | Convert frames to grayscale                                                         | No       | `False`   | `bool` |
 | --silent      | No console logging                                                                  | No       | `False`   | `bool` |
 | -t --threads  | The numbers of thread to create in order to process the videos (1 file == 1 thread) | No       | `4`       | `int`  |

@@ -33,11 +33,11 @@ class TestProcessing(unittest.TestCase):
         if os.path.isdir(self.out_dir):
             shutil.rmtree(self.out_dir)
 
-    def test_0_fps(self):
-        """Test that 0 requested fps == 1 requested fps"""
+    def test_1_fps(self):
+        """Test for 1 requested fps"""
 
         if not self.ON_GITHUB_CI:
-            run_cmd(self.default_cmd + " -f 0")
+            run_cmd(self.default_cmd + " -f 1")
             # Because 30fps * 2s and requesting 1fps * 2s == 2 frames
             self.assertEqual(len(os.listdir(self.blank_2s_save_path)), 2)
 
@@ -119,6 +119,18 @@ class TestProcessing(unittest.TestCase):
                 self.assertEqual(frame.shape[1], self.blank_2s_w)
 
     def test_resize_both(self):
+        """
+        Test that when width and height in args, both the width and the height
+        of the frame are resized
+        """
+        if not self.ON_GITHUB_CI:
+            run_cmd(self.default_cmd + " -f 1 --width 100 --height 100")
+            for p in os.listdir(self.blank_2s_save_path):
+                frame = cv2.imread(os.path.join(self.blank_2s_save_path, p))
+                self.assertEqual(frame.shape[0], 100)
+                self.assertEqual(frame.shape[1], 100)
+
+    def test_crop_x(self):
         """
         Test that when width and height in args, both the width and the height
         of the frame are resized

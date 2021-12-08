@@ -14,6 +14,10 @@ def main() -> None:
         fps=args.fps,
         width=args.width,
         height=args.height,
+        cxmin=args.cxmin,
+        cxmax=args.cxmax,
+        cymin=args.cymin,
+        cymax=args.cymax,
         gray=args.gray,
         silent=args.silent,
     )

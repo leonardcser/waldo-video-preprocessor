@@ -52,7 +52,6 @@ class IOVideoManager(object):
 
     def save_img(self, dest_path: Path, image: np.array) -> None:
         """Saves a np.array with cv2 to dest folder"""
-
         full_save_path = ""
         if IS_DOCKER:
             full_save_path = os.path.join(MOUNT_IMAGE_DEST, dest_path.as_posix())
