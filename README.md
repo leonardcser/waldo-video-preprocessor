@@ -19,17 +19,17 @@ Utility script that allows you to convert videos into preprocessed frames. The m
 
 ## Preview
 
-![Converted Frame 1](images/frame_11.png)
-
 ```
 python3 run.py -s "./data" -f 1
 ```
 
-![Converted Frame 2](images/frame_11_converted.png)
+![Converted Frame 1](images/frame_11.png)
 
 ```
 python3 run.py -s "./data" -f 1 --width 128 --height 128 -g
 ```
+
+![Converted Frame 2](images/frame_11_converted.png)
 
 _Credits to Homeless. (https://drive.google.com/drive/folders/1-nK8-WthZyB9G1O9MmAgD3h6CQsYkhUr)_
 
