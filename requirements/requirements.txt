@@ -1,0 +1,4 @@
+black==21.12b0
+flake8==4.0.1
+pre-commit==2.16.0
+opencv-python>=4.5.4.60,<4.6

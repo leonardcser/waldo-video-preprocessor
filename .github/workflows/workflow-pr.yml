@@ -1,0 +1,64 @@
+name: Python & Docker CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/workflow-pr.yml"
+      - "docker/**"
+      - "processing/**"
+      - "requirements/**"
+      - "tests/**"
+      - "utils/**"
+      - ".flake8"
+      - ".pyproject.toml"
+      - "build.py"
+      - "clean.py"
+      - "main.py"
+      - "run.py"
+      - "variables.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/workflow-pr.yml"
+      - "docker/**"
+      - "processing/**"
+      - "requirements/**"
+      - "tests/**"
+      - "utils/**"
+      - ".flake8"
+      - ".pyproject.toml"
+      - "build.py"
+      - "clean.py"
+      - "main.py"
+      - "run.py"
+      - "variables.py"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install python dependencies
+        run: pip install -r requirements/requirements.txt
+
+      - name: Build Docker image
+        run: docker build -f ./docker/Dockerfile -t waldo/preprocess:latest .
+
+      - name: Run unit tests
+        run: python3 -m unittest discover tests
+        env:
+          ON_GITHUB_CI: 1
+
+      - name: Black formatting check
+        run: black --check .
+
+      - name: Flake8 linting
+        run: flake8 .
