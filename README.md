@@ -1,10 +1,10 @@
-# Waldo Video Preprocessing
+# Waldo Video Preprocessor
 
 Utility script that allows you to convert videos into preprocessed frames. The main use is preprocessing video data for Neural Networks.
 
 ## Table of contents
 
-- [Waldo Video Preprocessing](#waldo-video-preprocessing)
+- [Waldo Video Preprocessor](#waldo-video-preprocessor)
   - [Table of contents](#table-of-contents)
   - [How to use](#how-to-use)
     - [With Docker (recommended)](#with-docker-recommended)
@@ -135,4 +135,4 @@ Python run test suite:
 python3 -m unittest discover tests
 ```
 
-Here again there is a option to run the test with or without Docker by toggling the `IS_DOCKER` boolean in [variables.py](variables.py).
+Here again there is a option to run the tests with or without Docker by toggling the `IS_DOCKER` boolean in [variables.py](variables.py).
