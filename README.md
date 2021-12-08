@@ -25,7 +25,7 @@ Utility script that allows you to convert videos into preprocessed frames. The m
 - Python3 (3.6-3.9): https://www.python.org/downloads/
 - Docker: https://docs.docker.com/engine/install/
 
-1. Build the container video with the following command (takes a minute & approx. 1.1GB):
+2. Build the container video with the following command (takes a minute & approx. 1.1GB):
 
 ```sh
 python3 build.py
