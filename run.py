@@ -13,7 +13,7 @@ def main() -> None:
     args = ArgParser().parse_args()
     # Remove the file name arg and replace it with the image src mount
     new_args = sys.argv[1:].copy()
-    new_args[new_args.index("-s") + 1] = f"{MOUNT_IMAGE_SRC}"
+    new_args[new_args.index("-s") + 1] = MOUNT_IMAGE_SRC
 
     # Run docker docker (image='IMAGE_NAME') and mount 2 volumes
     # The first volume allows the container to read the src folder
